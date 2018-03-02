@@ -78,11 +78,11 @@
 
 
             <div class="bs-docs-section">
-                {foreach name="list" item="vol" key="key"}
+                {foreach name="list" item="vol" key="keys"}
                 <h1 id="{$vol.param}" class="page-header">{$vol.title}</h1>
                 <p class="lead"><code>{$vol.class}</code></p>
                 {foreach name="$vol.method" item="vo" key="k"}
-                <h3 id="#{$key}-{$k}-{$vo.name}">{$k+1}. {$vo.title}</h3>
+                <h3 id="{$keys}-{$k}-{$vo.name}">{$k+1}. {$vo.title}</h3>
                 <p>方法名: <code>{$vo.name}()</code></p>
                 <div class="bs-callout bs-callout-info">
                     <p>{$vo.desc}</p>
@@ -148,12 +148,12 @@
         <div class="col-md-3" role="complementary">
             <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
                 <ul class="nav bs-docs-sidenav">
-                    {foreach name="list" item="vol" key="key"}
+                    {foreach name="list" item="vol" key="keys"}
                     <li>
                         <a href="#{$vol.param}">{$vol.title}</a>
                         <ul class="nav">
                             {foreach name="$vol.method" item="vo" key="k"}
-                            <li><a href="#{$key}-{$k}-{$vo.name}">{$vo.title}</a></li>
+                            <li><a href="#{$keys}-{$k}-{$vo.name}">{$vo.title}</a></li>
                             {/foreach}
                         </ul>
                     </li>
